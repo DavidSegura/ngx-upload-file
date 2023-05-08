@@ -100,6 +100,37 @@
           }
         }
       }
+    },
+    "ngx-upload-file": {
+      "projectType": "library",
+      "root": "projects/ngx-upload-file",
+      "sourceRoot": "projects/ngx-upload-file/src",
+      "prefix": "ngx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-upload-file/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-upload-file/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-upload-file/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-upload-file/src/test.ts",
+            "tsConfig": "projects/ngx-upload-file/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-upload-file/karma.conf.js"
+          }
+        }
+      }
     }
   }
 }
